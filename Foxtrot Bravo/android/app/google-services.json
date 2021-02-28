@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "891290824275",
+    "project_id": "foxtrot-bravo",
+    "storage_bucket": "foxtrot-bravo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891290824275:android:37cf8c078d90880c27e0a6",
+        "android_client_info": {
+          "package_name": "com.teamhac.foxtrot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891290824275-mdjok7rh506nffec2d46n9ai5092oet0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teamhac.foxtrot",
+            "certificate_hash": "b1ad83355aae06b6752c20428209f1841216eadc"
+          }
+        },
+        {
+          "client_id": "891290824275-d758tjv82ku72o64rp30k9ulmmu0s09p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhghtetTYD5ecgJH5nX-34TDpvKiBh2Fg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891290824275-d758tjv82ku72o64rp30k9ulmmu0s09p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
