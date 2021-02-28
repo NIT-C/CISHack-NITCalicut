@@ -17,6 +17,6 @@ Implementation: For the hackathon we are simulating a blockchain with ganache. W
 
 Note: The project directory contains the prototype code for the smart contract which we will deploy on our blockchain for our Dapp to access.
 
-
+The Dapp is available at https://github.com/AthulJoseph27/BlitzHacks_Hackathon
 
 
