@@ -1,0 +1,6 @@
+Team Name : 0xbin1024
+Topic chosen : Fintech
+Team Member(S) : Umar Farooq
+Project Idea : Analyse stocks and tell company to sell or not
+Implementation : Install yfinance and the pip packages used before running the notebook.Run the notebook like normally
+
