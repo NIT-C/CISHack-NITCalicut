@@ -1,0 +1,123 @@
+<div class="my-container">
+    <!-- ===============small screnn deivices=============== -->
+    <div class="promo" *ngIf="this.media.isActive('xs')">
+      <div class="main-svg-pos-sm">
+        <lottie-player
+        autoplay
+        loop
+        mode="normal"
+        src="../assets/lottie_anim/Blog.json"
+        style="width: 320px"
+        background="transparent"
+      >
+      </lottie-player>
+    </div>
+      <div class="contact-buttons">
+        <a mat-button [disableRipple]="false" class="user-buttons" (click)="OpenLoginForm()">Login</a>
+       <a mat-button class="user-buttons" [disableRipple]="false">Sign in</a>
+       <a mat-button class="user-buttons" [disableRipple]="false">Contact</a> 
+      </div>
+    </div>
+    <!-- ==============large screen pc devices====================== -->
+    <div class="promo-lg" *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')" >
+      <div class="front-text-quote">
+        Let your ideas flow like water
+      </div>
+      <div class="main-svg-pos">
+        <lottie-player
+        autoplay
+        loop
+        mode="normal"
+        src="../assets/lottie_anim/Blog.json"
+        style="width: 320px"
+        background="transparent"
+      >
+      </lottie-player>
+    </div>      
+      <div class="contact-buttons-lg">
+       <a mat-button [disableRipple]="false" class="user-buttons" (click)="OpenLoginForm()">Login</a>
+      <a mat-button class="user-buttons" [disableRipple]="false">Sign in</a>
+      <a mat-button class="user-buttons" [disableRipple]="false">Contact</a> 
+      
+      </div>
+    </div>
+    <!-- =================== Topic card views ====================-->
+    <!-- ===============small screnn deivices=============== -->
+    <div class="card-positioner" *ngIf="this.media.isActive('xs')">
+      <div class="spacer">
+        <!-- simply for making space  -->
+      </div>
+      <div *ngIf="blogs_template">
+          <div fxLayout="column"  *ngFor="let blogs_t of blogs_template">
+              <div [routerLink]="['/blogFull',blogs_t.id]">
+                <div class="image-container-sm">
+                  <img height="170px" width="100%" src={{blogs_t.thumbnail[0]}} >
+                </div>
+                <div class="card-footer">
+                  <p>{{blogs_t.title}}</p>
+                  <div class="card-author-name-sm">
+                    <p>. {{blogs_t.author.toLowerCase()}} .</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+      </div>
+      <div *ngIf="!blogs_template">
+        <div id="loading-anim2">
+          <app-loading-anim ></app-loading-anim>
+        </div>
+          <div style="min-height: 500px;"></div>
+      </div>
+      <div class="fab-button-container-sm" >
+        <button mat-fab color="accent"  routerLink="/write_blog" >
+          <mat-icon>create</mat-icon>
+        </button>
+      </div>
+    </div>
+    <!-- ==============large screen pc devices====================== -->
+    <div  class="card-positioner" *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')" >
+    <div *ngIf="blogs_template">
+      <mat-grid-list fxFlex cols="3" rowHeight="400px">
+        <mat-grid-tile *ngFor="let blogs_t of blogs_template"  >
+          <div [routerLink]="['/blogFull',blogs_t.id]">
+                <div class="slideup-anim">
+                  <div class="image-container">
+                    <div class="image-inner">
+                        <img height="250px" width="100%" src={{blogs_t.thumbnail[0]}}>
+                        <div class="card-footer-lg">
+                          <p>{{blogs_t.title}}</p>
+                          <div class="card-author-name">
+                            <p>. {{blogs_t.author.toLowerCase()}} .</p>
+                          </div>
+                        </div>
+                        
+                    </div>
+                  </div>
+                </div>
+          </div>
+
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </div>
+
+      <div *ngIf="!blogs_template">
+        <div id="loading-anim">
+          <app-loading-anim ></app-loading-anim>
+        </div>
+          <div style="min-height: 500px;"></div>
+      </div>
+    
+     
+
+      <div class="fab-button-container" >
+        <button mat-fab color="accent"  routerLink="/write_blog" >
+          <mat-icon>create</mat-icon>
+        </button>
+      </div>
+    </div>
+      <div class="spacer">
+        <!-- simply for making space  -->
+      </div>
+    </div>

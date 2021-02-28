@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+
+
+.main-container{
+ 
+  overflow: hidden;
+
+  width:100%; height: 100%;
+  // background-image: url("/assets/images/login_back.webp");
+  background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+  
+}
+.overlay-container{
+  overflow: hidden;
+
+  width:100%; height: 100%;
+  background:rgba(40,57,101,.8);
+}
+
+.user-welcome{
+  display: flex;
+  margin-top:50px;
+
+  font-family: 'Raleway', sans-serif;
+  // font-weight: bold;;
+  color :white;
+  font-size:25px;
+  margin-left: auto;
+    margin-right: auto;
+    justify-content: center 
+}
+
+.user-icon{
+    // margin-left:160px;
+    margin-top:30px;
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width:140px;
+    height:140px;
+    border-radius: 50%;
+    background-color:rgb(80, 107, 204);
+    z-index: 2;
+}
+
+.name path {
+    stroke-dasharray: 73.50196075439453;
+    stroke-dashoffset: 73.50196075439453;
+    animation: animatePath 2s 0.5s forwards;
+  }
+
+.user{
+    margin-top:50px;
+    margin-left:0px;
+    transform:scale(2);
+}
+
+.google-but{
+  display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  margin-top: 90px;;
+  padding-top:10px;
+
+  width:250px;
+  height:60px;
+  border-radius:10px;
+  background-color: #f1f3f5;
+  font-family: 'Raleway', sans-serif;
+  // font-weight: bold;;
+  font-size:20px;
+
+}
+
+
+.facebook-but{
+  display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  margin-top: 20px;;
+  padding-top:10px;
+  width:250px;
+  height:60px;
+  border-radius:10px;
+  background-color: #f1f3f5;
+  font-family: 'Raleway', sans-serif;
+  // font-weight: bold;;
+  font-size:20px;
+}
+
+.fab {
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: 400;
+  margin-right: 10px;
+  margin-bottom: 2px;
+  font-size:25px;
+  color:rgb(61, 125, 245);
+}
+
+
+
+
+.cancel-but{
+  width:100px;
+
+  margin-top:50px;
+  margin-right:60px;
+  font-family: 'Raleway', sans-serif;
+  font-size:15px;
+  border-radius: 20px;
+  background-color: black;
+  border-width: 2px;
+  // border-color: rgb(0,0,55);
+  color:white;
+}
+
+svg {
+  
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    overflow: visible;
+  }
+  .svg-icon {
+    
+  
+    path {
+      stroke: rgba(245, 245, 245, 0.9);
+    
+      fill: none;
+      stroke-width: 1;
+    }
+  }
+
+  @keyframes animatePath {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+.hr{
+  height:2px;
+  // margin:60px 0 50px 0;
+  margin-left:20px;
+  margin-right:20px;
+  margin-top: 30px;
+  background:rgba(255,255,255,.2);
+}

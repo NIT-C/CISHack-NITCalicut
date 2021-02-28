@@ -1,0 +1,159 @@
+<div #mainCont (click)="clicked()" class='main-container'>
+    <div *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')" class="large-display-offset">
+      
+    </div>
+    <div class="main-content-animation">
+        <div class="top-spacer"></div>
+        <div class="form-titlebox" *ngIf="this.media.isActive('xs')">
+            <div class="form-title" >
+                Pen down your thoughts
+            </div>
+        </div>
+      
+      <div class="form-titlebox"  *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')">
+          <div class="form-title" style="font-size:43px; margin-bottom:20px">
+              Pen down your thoughts
+          </div>
+      </div>
+  
+  
+        <div class="container"
+          fxLayout="column"
+          fxLayoutGap="10px">
+  
+          
+  
+  
+        <div fxFlex fxFlexOffset="20px" class="form-size">
+        
+          
+  
+          <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()">
+  
+            <p style="margin-top:30px; margin-bottom:20px;">
+              <mat-form-field class="full-width">
+                <input matInput formControlName="title" placeholder="Title" type="text" required>
+                <mat-error *ngIf="formErrors.title">
+                  {{formErrors.title}}
+                </mat-error>
+              </mat-form-field>
+            
+  
+            </p>
+            <div class="body-code">
+              Enclose your computer code in ``` and ``` for code highlights
+            </div>
+  
+            <div class="type-area">
+  
+              <p>
+              
+              <mat-form-field class="full-width-body">
+                <textarea matInput formControlName="body" placeholder="write your blog" rows=14 required></textarea>
+                <mat-error *ngIf="formErrors.body">
+                  {{formErrors.body}}
+                </mat-error>
+              </mat-form-field>
+  
+  
+              </p>
+            </div>
+  
+             
+           
+              <p>
+                
+                <mat-form-field class="full-width">
+                  <textarea matInput formControlName="links" placeholder="Provide reference links" rows=2></textarea>
+                  <mat-error *ngIf="formErrors.links">
+                    {{formErrors.links}}
+                  </mat-error>
+                </mat-form-field>
+          
+          
+                </p>
+  
+               
+  
+  
+              <div class="body-code">
+                Enter your tags seperated by comma
+              </div>
+              <mat-form-field class="full-width" style="margin-top:15px;">
+                <textarea matInput formControlName="tags" placeholder="tags" rows=2></textarea>
+                <mat-error *ngIf="formErrors.tags">
+                  {{formErrors.tags}}
+                </mat-error>
+              </mat-form-field>
+  
+
+
+              <div class="body-code" style="margin-top:20px;">
+                Add a thumbnail image
+              </div>
+              <div class="body-code" style="font-style: italic; font-size: 13px;margin-top: -5px;">
+                this image will be replaced over the default blog card images
+              </div>
+  
+              <input style="display:none;" formControlName="file" id="file"  type="file"  class="form-control" multiple="" 
+  
+              (change)="onFileChange_thumb($event)" accept="image/*" #fileInput >
+  
+              <button mat-button type="button" class='image-pic-button' (click)="fileInput.click()"> + </button>
+              
+              <div *ngFor='let url of images_thumb let i=index;'>
+                <div class="image-names">
+                  {{this.image_names_thumb[i]}}
+                </div>
+                <img    [src]="url" height="100" width="200px" class="preview-image" > <br/>
+              </div>
+              
+             
+  
+              <button mat-button  class='image-clear-but'  type="button" (click)="clear_entries_thumb()"> Clear </button>
+              
+
+
+
+
+
+
+
+
+              <div class="body-code" style="margin-top:20px;">
+                Upload image 
+              </div>
+              <div class="body-code" style="font-style: italic; font-size: 13px;margin-top: -5px;">
+                landscape orientation works best
+              </div>
+  
+              <input style="display:none;" formControlName="file" id="file"  type="file"  class="form-control" multiple="" 
+  
+              (change)="onFileChange($event)" accept="image/*" #fileInput_img >
+  
+              <button mat-button type="button" class='image-pic-button' (click)="fileInput_img.click()"> + </button>
+              
+              <div *ngFor='let url of images let i=index;'>
+                <div class="image-names">
+                  {{this.image_names[i]}}
+                </div>
+                <img    [src]="url" height="100" width="200px" class="preview-image" > <br/>
+              </div>
+              
+             
+  
+              <button mat-button  class='image-clear-but'  type="button" (click)="clear_entries()"> Clear </button>
+              
+  
+  
+              <button type="submit" [disabled]="!fform.valid"  mat-button class="submit-but" >Post your Blog</button>
+  
+            
+            
+  
+          </form>
+        </div>
+  
+        </div>
+      </div>
+  </div>

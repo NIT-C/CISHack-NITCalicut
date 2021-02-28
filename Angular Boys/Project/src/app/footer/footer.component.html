@@ -1,0 +1,75 @@
+
+<div class="company-display">
+  <img class="logo" src="../../favicon.ico">
+  <div class="caption" *ngIf="this.media.isActive('xs')">Ask any questions we are there to answer it</div>
+  <div class="caption-lg" *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')">Ask any questions we are there to answer it</div>
+
+</div>
+
+
+<div class="line">
+</div>
+<div class="container footer" 
+    fxLayout="row wrap" 
+    fxLayout.lt-md="column" 
+    fxLayoutAlign="center center" 
+    fxLayoutGap="10px">
+
+  <div fxFlex="100" fxFlex.gt-sm="50">
+    <div fxLayout="row">
+      <div fxFlex="40" fxFlexOffset="20px">
+      
+        <mat-list *ngIf="this.media.isActive('xs')" class="links-list" style="margin-left:5px;">
+          <mat-list-item ><a style="color:white" routerLink="/home" mat-button>Home</a></mat-list-item>
+          <mat-list-item ><a style="color:white" routerLink="/blog" mat-button>Blog</a></mat-list-item>
+          <mat-list-item><a style="color:white"routerLink="/account" mat-button>Account</a></mat-list-item>
+          <mat-list-item><a style="color:white" mat-button>About</a></mat-list-item>
+        </mat-list>
+        <mat-list *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')" class="links-list-lg">
+          <mat-list-item><a class="link-hover" routerLink="/home"  mat-button>Home</a></mat-list-item>
+          <mat-list-item><a class="link-hover" routerLink="/blog" mat-button>Blog</a></mat-list-item>
+          <mat-list-item><a class="link-hover" routerLink="/account" mat-button>Account</a></mat-list-item>
+          <mat-list-item><a class="link-hover"  mat-button>About</a></mat-list-item>
+        </mat-list>
+      </div>
+      <div fxFlex="55" *ngIf="this.media.isActive('xs')">
+        <p class="inst-name-sm">National Institute Of Technology Calicut</p>
+        <address style="font-size: 14px; margin-top:5px; line-height: 25px;;">
+         
+          <i class="fa fa-phone"></i>: +917306019021<br>
+          <i class="fa fa-fax"></i>: +917306019021<br>
+          <i class="fa fa-envelope"></i>:
+          <a style="color:white" href="mailto:www.nitc.in">www.nitc.in</a>
+        </address>
+      </div>
+      <div class="contact-lg" *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')">
+        <span id="short">N</span><span>ational <span id="short">I</span>nstitute Of <span id="short">T</span>echnology <span id="short">C</span>alicut</span>
+        <address style="font-size: 15px; margin-top:10px; line-height: 20px;;">
+         
+          <i class="fa fa-phone"></i>: +917306019021<br>
+          <i class="fa fa-fax"></i>: +917306019021<br>
+          <i class="fa fa-envelope"></i>:
+          <a style="color:white" href="mailto:www.nitc.in">www.nitc.in</a>
+        </address>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div fxFlex="100" fxFlex.gt-sm="105">
+    <div class="social-accounts">
+      <a mat-icon-button class="btn-google-plus" href="http://google.com/+"><i class="google-icon" class="fab fa-google"></i></a>
+      <a mat-icon-button class="btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="google-icon" class="fab fa-facebook"></i></a>
+      <a mat-icon-button class="btn-linkedin" href="http://www.linkedin.com/in/"><i class="google-icon" class="fab fa-linkedin"></i></a>
+      <a mat-icon-button class="btn-twitter" href="http://twitter.com/"><i class="google-icon" class="fab fa-twitter"></i></a>
+      <a mat-icon-button class="btn-youtube" href="http://youtube.com/"><i class="google-icon" class="fab fa-youtube"></i></a>
+      <a mat-icon-button class="btn-insta" href="http://instagram.com/"><i class="google-icon" class="fab fa-instagram"></i></a>
+      
+    </div>
+  </div>
+  <div style="padding-top:25px; font-size:16px;">
+      <p>© Copyright 2020 Product Name</p>
+      
+  </div>
+ 
+</div>
+

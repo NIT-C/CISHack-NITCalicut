@@ -1,0 +1,92 @@
+<div class="my-container">
+<!-- ===============small screnn deivices=============== -->
+<div class="promo" *ngIf="this.media.isActive('xs')">
+  
+  <div class="main-svg-pos-sm">
+    <lottie-player
+    autoplay
+    loop
+    mode="normal"
+    src="../assets/lottie_anim/customersupport.json"
+    style="width: 320px"
+    background="transparent"
+  >
+  </lottie-player>
+</div>
+  <div class="contact-buttons">
+    <a mat-button [disableRipple]="false" class="user-buttons" (click)="OpenLoginForm()">Login</a>
+   <a mat-button class="user-buttons" [disableRipple]="false">Sign in</a>
+   <a mat-button class="user-buttons" [disableRipple]="false">Contact</a> 
+  </div>
+</div>
+<!-- ==============large screen pc devices====================== -->
+<div class="promo-lg" *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')" >
+
+  <div class="front-text-quote">
+    We answer your questions
+  </div>
+  <div class="main-svg-pos">
+      <lottie-player
+      autoplay
+      loop
+      mode="normal"
+      src="../assets/lottie_anim/customersupport.json"
+      style="width: 320px"
+      background="transparent"
+    >
+    </lottie-player>
+  </div>
+
+  <div class="contact-buttons-lg">
+   <a mat-button [disableRipple]="false" class="user-buttons" (click)="OpenLoginForm()">Login</a>
+  <!-- <a mat-button class="user-buttons" [disableRipple]="false">Sign in</a> -->
+  <a mat-button class="user-buttons" [disableRipple]="false">Contact</a> 
+  
+  </div>
+</div>
+<!-- =================== Topic card views ====================-->
+<!-- ===============small screnn deivices=============== -->
+<div class="card-positioner" *ngIf="this.media.isActive('xs')">
+  <div class="spacer">
+    <!-- simply for making space  -->
+  </div>
+  <div fxLayout="column"  *ngFor="let topic of topics" [routerLink]="['/topicQuestions',topic.id]">
+  
+        <div class="image-container">
+          <img height="170px" width="100%" src={{topic.image}} alt={{topic.topic}}>
+        </div>
+        <div class="card-footer">
+          <p>{{topic.topic}}</p>
+        </div>
+    
+  </div>
+  
+  <div [hidden]="topics">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
+<!-- ==============large screen pc devices====================== -->
+<div  class="card-positioner" *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')" >
+
+  <mat-grid-list fxFlex cols="3" rowHeight="350px">
+    <mat-grid-tile *ngFor="let topic of topics"   [routerLink]="['/topicQuestions',topic.id]">
+      <div class="slideup-anim">
+        <div class="image-container">
+          <div class="image-inner">
+              <img height="250px" width="100%" src={{topic.image}} alt={{topic.topic}}>
+              <div class="card-footer-lg">
+                <p>{{topic.topic}}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div [hidden]="topics">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
+  <div class="spacer">
+    <!-- simply for making space  -->
+  </div>
+</div>

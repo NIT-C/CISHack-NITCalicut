@@ -1,0 +1,85 @@
+<div class="my-container">
+
+
+    <div *ngIf="this.media.isActive('xs')">
+         
+    
+          
+          <div *ngIf="questions" class="fade-question">
+              <div  class="question-pallet"  *ngFor="let ques of questions; let i=index;">
+                
+                  <div class="ques-bar" [style.backgroundColor]="color_pallet[i%pallet_size]"  [routerLink]="['/questions',ques.user_end_doc_id,ques.cat_id]">
+                    <p style="padding: 10px;margin:0;">{{ques.title}}</p>
+                    
+                    <div class="response-pallet">
+                      <p style="padding: 10px;margin:0; font-size:15px;">{{ques.no_of_answers}}
+                      <span class="fa fa-comment fa-lg" id="comment"></span>
+                      <span id="like-spacer"></span>{{ques.likes}}
+                      <span class="fa fa-heart fa-lg" id="heart"></span>
+                      <span class="line-spacer2">{{ques.date|date}}</span></p>
+                    </div>
+                  </div>
+    
+    
+    
+                
+              </div>
+              
+              <div class="footer-spacer"></div>
+          </div>
+          <div *ngIf="!questions" class="animate-loader">
+            <div id="loading-anim2">
+            <app-loading-anim ></app-loading-anim></div>
+            <div style="min-height: 200px;"></div>
+          </div>
+    
+        </div>
+    
+    </div>
+    
+    
+    
+    <div *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')" class="large-display-container">    
+      
+    
+    <div class="sub-container" >
+      <!-- line seperation for the catogory tab -->
+    
+        <!-- controll pannel for the questions  -->
+       
+    
+       
+        <div *ngIf="questions" class="fade-question">
+            <div  class="question-pallet"   *ngFor="let ques of questions; let i=index;">
+              
+                <div class="ques-bar" [style.backgroundColor]="color_pallet[i%pallet_size]"  [routerLink]="['/questions',ques.user_end_doc_id,ques.cat_id]">
+                  <p style="padding: 10px;margin:0;">{{ques.title}}</p>
+                  
+                  <div class="response-pallet">
+                    <p style="padding: 10px;margin:0; font-size:15px;">{{ques.no_of_answers}}
+                    <span class="fa fa-comment fa-lg" id="comment"></span>
+                    <span id="like-spacer"></span>{{ques.likes}}
+                    <span class="fa fa-heart fa-lg" id="heart"></span>
+                    <span class="line-spacer2">{{ques.date|date}}</span></p>
+                  </div>
+                </div>
+    
+    
+    
+              
+            </div>
+           
+            <div class="footer-spacer"></div>
+        </div>
+        <div *ngIf="!questions" class="animate-loader" style="margin-left:100px;">
+          <div id="loading-anim">
+          <app-loading-anim ></app-loading-anim></div>
+          <div style="min-height:300px"></div>
+        </div>
+    
+    </div>
+</div>
+    
+   
+    
+    

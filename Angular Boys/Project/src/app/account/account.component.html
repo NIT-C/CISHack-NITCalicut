@@ -1,0 +1,91 @@
+
+<div class="my-container">
+    
+    <div  *ngIf=" this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')" class="large_screen_cont">
+        <img class="bg-image_pos" src="./assets/images/account_bg.jpg">
+
+        <img  class="comment-author-img"  src={{current_user_avatar}} alt="">
+        <div class="user-name">
+            {{user_name}}
+        </div>
+
+        <div class="line"></div>
+
+        <div class="inner-nav">
+            <div class="ind-elements" *ngIf="selected_view!=1" (click)="change_view(1)">
+                My questions
+            </div>
+            <div class="ind-elements" *ngIf="selected_view==1" style="color:var(--selected-color)" (click)="change_view(1)">
+                My questions
+            </div>
+
+            <div class="ind-elements" *ngIf="selected_view!=2" (click)="change_view(2)">
+                Blogs
+            </div>
+            <div class="ind-elements" *ngIf="selected_view==2" style="color:var(--selected-color)" (click)="change_view(2)">
+                Blogs
+            </div>
+
+            <div class="ind-elements"  *ngIf="selected_view!=3" (click)="change_view(3)">
+                My Answers
+            </div>
+            <div class="ind-elements" *ngIf="selected_view==3" style="color:var(--selected-color)" (click)="change_view(3)">
+                My Answers
+            </div>
+        </div>
+
+        <app-user-questions *ngIf="selected_view==1"></app-user-questions>
+
+        <app-user-blog *ngIf="selected_view==2"></app-user-blog>
+
+        <app-user-answers *ngIf="selected_view==3"></app-user-answers>
+
+    </div>
+
+    <div *ngIf="this.media.isActive('xs')">
+        <img class="bg-image_pos-sm" src="./assets/images/account_bg.jpg">
+        
+        <img  class="comment-author-img-sm"  src={{current_user_avatar}} alt="">
+        
+        <div class="user-name-sm">
+            {{user_name}}
+        </div>
+
+        <div class="line"></div>
+
+  
+        <div class="inner-nav">
+            <div class="ind-elements-sm" *ngIf="selected_view!=1" style="margin-left:6%" (click)="change_view(1)">
+                My questions
+            </div>
+            <div class="ind-elements-sm" *ngIf="selected_view==1" style="color:var(--selected-color); margin-left:6%" (click)="change_view(1)">
+                My questions
+            </div>
+
+            <div class="ind-elements-sm" *ngIf="selected_view!=2" (click)="change_view(2)">
+                Blogs
+            </div>
+            <div class="ind-elements-sm" *ngIf="selected_view==2" style="color:var(--selected-color)" (click)="change_view(2)">
+                Blogs
+            </div>
+
+            <div class="ind-elements-sm" *ngIf="selected_view!=3" (click)="change_view(3)">
+                My Answers
+            </div>
+            <div class="ind-elements-sm" *ngIf="selected_view==3" style="color:var(--selected-color)" (click)="change_view(3)">
+                My Answers
+            </div>
+
+        </div>
+
+
+        <app-user-questions *ngIf="selected_view==1"></app-user-questions>
+
+        <app-user-blog *ngIf="selected_view==2"></app-user-blog>
+
+        <app-user-answers *ngIf="selected_view==3"></app-user-answers>
+        
+    </div>
+
+
+</div>

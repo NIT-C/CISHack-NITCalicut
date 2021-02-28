@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+#top_bar{
+    margin:0;
+    margin-top:-56px;
+    padding: 0;
+    height:60px;
+    background-color: var(--background);
+    color:var(--main-text);
+    position:fixed;
+    z-index:2;
+    box-shadow: 0px 0px 0px rgba(0,0,0,.05),0px 0px 3px rgba(0, 0, 0, 0.2),0px 0px 3px rgba(0, 0, 0, 0.2),0px 0px 3px rgba(0, 0, 0, 0.2);
+
+}
+#lg-top_bar{
+    margin:0;
+    padding: 0;
+    height:70px;
+    background-color: var(--background);
+    color:var(--main-text);
+    position:fixed;
+    z-index:2;
+
+}
+.fav-image{
+    margin-top:20px;
+    margin-right:10px;
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.logo{
+    display:flex;
+    margin:25px;
+    padding: 0;
+    
+}
+.comp-name{
+  margin-top:20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+.lg-logo{
+    display:flex;
+    margin:25px;
+    padding: 0;
+    
+}
+.account-text{
+  cursor: pointer;
+  
+}
+li{
+  font-weight: 400;
+}
+#down_bar{
+    margin:0;
+    margin-top:4px;
+    padding:0;
+    width:100%;
+    padding-top: 7px;
+    height: 48px;
+    background-color: var(--light-grey);
+    color:var(--main-text);
+    transition: height color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    overflow: hidden;
+
+}
+#lg-down_bar{
+    margin:0;
+    margin-top:60px;
+    padding:0;
+    width:100%;
+    height: 47px;
+    background-color: var(--light-grey);
+    color:var(--main-text);
+    transition: height color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    overflow: hidden;
+    margin-top: 70px;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0px 0px 0px rgba(0,0,0,.05),0px 0px 5px rgba(0, 0, 0, 0.2),0px 0px 5px rgba(0, 0, 0, 0.2),0px 0px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+
+#current-tab{
+    color:#0066b4;
+    font-family: 'Lato', sans-serif;
+    font-weight: 550;
+}
+
+.but-on{
+    margin:0;
+    padding:0;
+    margin-left:13px;
+    font-size: 17px;
+    font-family: Graphik,Helvetica,Arial,sans-serif;
+    text-align: center;
+    top:2px;
+    left:14px;
+    
+}
+.lg-nav-but{
+    margin-left:27px;
+    margin-right: 20px;
+    font-size: 17px;
+    margin-top: 5px;
+    min-width:88px;
+    border-radius:2px;
+    font-weight: 400;
+    
+}
+.lg-nav-but:hover{
+  transform:scale(1.03);
+
+}
+.search-but{
+  
+    margin:0;
+    padding:0;
+    margin-right:10px;
+    font-size: 17px;
+    font-family:Graphik,Helvetica,Arial,sans-serif;
+    text-align: center;
+    top:0px;
+    float:right;
+    opacity:0.5;
+}
+
+.arrow{
+    margin:0;
+    padding:0;
+}
+
+.sub-options{
+    margin-top: 0px;
+    margin-left: 13px;
+    font-family: 'Lato', sans-serif;
+}
+
+.sub-buttons{
+    color:var(--main-text);
+    opacity:0.6;
+    font-size: 17px;
+    font-weight: initial;
+    padding-top:15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#account-drop[_ngcontent-c5] {
+    margin-right: 25px;
+    font-size: 15px;
+}
+
+.dropdown {
+    position: relative;
+    margin-right:20px;
+    display: inline-block;
+}
+
+.dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    cursor: pointer;
+    display: none;
+    margin: 0;
+    
+
+    /****************
+     ** NEW STYLES **
+     ****************/
+
+    list-style: none; /** Remove list bullets */
+    width: 100%; /** Set the width to 100% of it's parent */
+    padding: 0;
+    
+    
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    cursor: pointer;
+}
+
+/** Button Styles **/
+.dropdown button {
+    background: #f1f3f5;
+    color: black;
+    border: none;
+    margin: 0;
+    padding: 0.4em 0.8em;
+    font-size: 0.8em;
+}
+
+/** List Item Styles **/
+.dropdown a {
+    display: block;
+    padding: 0.2em 0.8em;
+    text-decoration: none;
+    font-size: 15px;
+    background: #f1f3f5;
+    color: black;
+}
+
+/** List Item Hover Styles **/
+.dropdown a:hover {
+    background: #BBBBBB;
+}
+
+#new-but{
+    background-color:var(--background-counter);
+    color:var(--main-text-counter);
+}
+
+
+.toggle {
+  --size: 2rem;
+  margin-left:20px;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  
+  width: var(--size);
+  height: var(--size);
+  box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+  border-radius: 999px;
+  color: hsl(240, 100%, 95%);
+  
+  transition: all 500ms;
+  
+  &:checked {
+    --ray-size: calc(var(--size) * -0.4);
+    --offset-orthogonal: calc(var(--size) * 0.65);
+    --offset-diagonal: calc(var(--size) * 0.45);
+
+    transform: scale(0.75);
+    color: hsl(40, 100%, 50%);
+    box-shadow: 
+      inset 0 0 0 var(--size),
+      calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+      var(--offset-orthogonal) 0 0 var(--ray-size),
+      0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+      0 var(--offset-orthogonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+      var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+      var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+    ;
+  }
+}
+
+.comment-author-img{
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    transform: translate(-15px,0px);
+}

@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+// @import 'variables';
+// @import '../node_modules/font-awesome/scss/font-awesome';
+@import '~highlight.js/styles/androidstudio.css';
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FFC107;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.flex-spacer {
+    flex: 1 1 auto;
+  }
+
+body{
+    margin:0;
+    padding:0;
+}
+
+.mat-button-focus-overlay{
+    background-color: transparent!important;
+}
+
+*:focus {
+    outline: 0;
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+}

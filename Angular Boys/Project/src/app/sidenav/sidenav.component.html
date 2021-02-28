@@ -1,0 +1,38 @@
+
+<mat-sidenav-container   [style.marginTop.px]="mobileQuery.matches ? 56 : 0" >
+
+  <mat-sidenav #sideNav [(opened)]="toggle" position="end"  [fixedInViewport]="true" >
+    <div class="closer">
+      <a mat-button class="close-but"  [disableRipple]="false" (click)="toggle=!toggle"><span class="fa fa-times fa-lg"></span></a>
+    </div>
+    
+    <img class="fav-image" src="../../favicon.ico">
+
+    <div class="navig-but">
+      <a fxLayout="row" class="navi-buttons" fxLayoutGap="65px" routerLink="/home" (click)="side_change_tab('Home')"  mat-button [disableRipple]="true">
+        <span class="fa fa-home fa-lg" style="padding-right: 10px;"></span>  Home</a>
+      <a fxLayout="row" class="navi-buttons" fxLayoutGap="65px" routerLink="/ask" (click)="side_change_tab('ask')" mat-button [disableRipple]="true">
+        <span class="fa fa-question fa-lg" style="padding-right: 18px;"></span>  Ask</a>
+      <a fxLayout="row" class="navi-buttons" fxLayoutGap="65px" routerLink="/blog" (click)="side_change_tab('Blog')" mat-button [disableRipple]="true">
+        <span class="fa fa-blog fa-lg" style="padding-right: 10px;"></span>  Blog</a>
+      <a fxLayout="row" class="navi-buttons" fxLayoutGap="65px"  routerLink="/write_blog"   (click)="side_change_tab('Write Blog')" mat-button [disableRipple]="true">
+        <span class="fa fa-pencil-alt fa-lg" style="padding-right: 10px;"></span>  Write blog</a>
+      <a fxLayout="row" class="navi-buttons" fxLayoutGap="65px"  routerLink="/account" (click)="side_change_tab('Account')" mat-button [disableRipple]="true">
+        <span class="fa fa-user fa-lg" style="padding-right: 10px;"></span>  Account</a>
+      <a fxLayout="row" class="navi-buttons" fxLayoutGap="65px" (click)="side_change_tab('About')" mat-button [disableRipple]="true">
+        <span class="fa fa-layer-group fa-lg" style="padding-right: 10px;"></span>  About</a>
+ 
+    </div>
+   
+  </mat-sidenav>
+  
+    <mat-sidenav-content >
+      <app-header></app-header>
+      
+      <router-outlet #outlet="outlet" (activate)="onActivate($event)"></router-outlet>
+      
+      <app-footer></app-footer>
+      
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

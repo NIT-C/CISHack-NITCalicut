@@ -1,0 +1,74 @@
+<!-- ================material tool bar for smaller devices====================== -->
+<mat-toolbar id="top_bar" *ngIf="this.media.isActive('xs')">
+
+    <div class="logo">
+      <img class="fav-image" src="../../favicon.ico">
+      <p class="comp-name">knoWare</p>
+    </div>
+
+    <input id="toggle" style="margin-left:0px;" class="toggle" (click)="toggle()"  type="checkbox" checked="false">
+    <span class="flex-spacer"></span>
+    <a mat-button style="margin-right:12px;" [disableRipple]="false" (click)="toggleRightSidenav()"><span class="fa fa-bars fa-lg"></span></a>
+
+</mat-toolbar>
+
+<!-- =====================material toolbar for larger devices================== -->
+<mat-toolbar id="lg-top_bar"*ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')">
+
+  <div class="lg-logo">
+    <img class="fav-image" src="../../favicon.ico">
+    <p class="comp-name">knoWare</p>
+  </div>
+ 
+
+  <input id="toggle" class="toggle" (click)="toggle()"  type="checkbox" checked="false">
+  <span class="flex-spacer"></span>
+
+      <img  class="comment-author-img"  src={{current_user_avatar}} alt="">
+
+      <div class="dropdown">
+
+        <!-- trigger button -->
+        <button class="account-text">Account  <span  class="fa fa-angle-down fa" ></span></button>
+
+        <!-- dropdown menu -->
+        <ul class="dropdown-menu">
+            <li *ngIf="is_logged_in==null"><a (click)="OpenLoginForm()">Login</a></li>
+            <li *ngIf="is_logged_in!=null"><a (click)="OpenLoginForm()">Logout</a></li>
+            <li *ngIf="is_logged_in!=null"><a >Profile</a></li>
+        </ul>
+    </div>
+  
+</mat-toolbar>
+
+
+
+<!-- =================down dropdown type bar for smaller devices================== -->
+<div id="down_bar" *ngIf="this.media.isActive('xs')">
+  
+  <a mat-button class="but-on" id="current-tab" (click)="togglePanel()" [disableRipple]="true">{{current_tab}}
+    <span style="margin-left:4px; font-size: 13px; " *ngIf="panelOpenState==true" class="fa fa-angle-up fa-lg"></span>
+    <span style="margin-left:4px; font-size: 13px;" *ngIf="panelOpenState==false" class="fa fa-angle-down fa-lg"></span>
+  </a>
+
+  <a mat-button class="search-but" [disableRipple]="true"><span class="fa fa-search fa-lg"></span></a>
+  <div class="sub-options">
+   
+    <a fxLayout="row" class="sub-buttons" fxLayoutGap="10px" routerLink="/home" (click)="change_tab('Home')"  mat-button [disableRipple]="true"> Home</a>
+    <a fxLayout="row" class="sub-buttons" fxLayoutGap="10px" routerLink="/blog" (click)="change_tab('Blog')"  mat-button [disableRipple]="true"> Blog</a>
+    <a fxLayout="row" class="sub-buttons" fxLayoutGap="10px" routerLink="/account" (click)="change_tab('Account')"  mat-button [disableRipple]="true"> Account</a>
+  </div>
+</div>
+
+
+<!-- ===============down static navbar for larger devices================== -->
+<div id="lg-down_bar" *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')" >
+  <a class="lg-nav-but" id="new-but" mat-button [disableRipple]="true" routerLink="/home" (click)="change_tab_lg('Home')">Home</a>
+  <a class="lg-nav-but" mat-button [disableRipple]="true" routerLink="/ask" (click)="change_tab_lg('Ask')">Ask</a>
+  <a class="lg-nav-but" mat-button [disableRipple]="true" routerLink="/blog" (click)="change_tab_lg('Blog')">Blog</a>
+  <a class="lg-nav-but" mat-button [disableRipple]="true" (click)="change_tab_lg('Topics')">Topics</a>
+  <a class="lg-nav-but" mat-button [disableRipple]="true" routerLink="/account" (click)="change_tab_lg('Account')">Account</a>
+  <a class="lg-nav-but" mat-button [disableRipple]="true" (click)="change_tab_lg('About')">About</a>
+  <a class="lg-nav-but" mat-button [disableRipple]="true" (click)="change_tab_lg('Contact')">Contact</a>
+  <a mat-button class="search-but" [disableRipple]="true"><span class="fa fa-search fa-lg"></span></a>
+</div>

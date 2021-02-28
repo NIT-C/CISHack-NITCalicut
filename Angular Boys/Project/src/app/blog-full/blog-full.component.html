@@ -1,0 +1,362 @@
+<div class="my-container">
+
+
+    <div *ngIf="this.media.isActive('xs')">
+    
+      <div class="line-sep4"></div>
+      <div class="catogory">
+        <p style="margin-left:25px; padding-top:7px;">blog <span class="fa fa-angle-right fa-lg"></span></p>
+      </div>
+      <!-- line seperation for the catogory tab -->
+      <div class="line-sep"></div>
+    
+    
+    
+          <!-- controll pannel for the questions  -->
+    
+    
+    
+          <div class="control-pannel">
+          
+            <a style="margin-left:12px;" mat-button class="back-but" (click)="goBack()" [disableRipple]="true">Back</a>
+          </div>
+    
+          <div *ngIf="question" class="fade-question">
+              <div class="qs-title" style="line-height: 29px;;">
+                <p style="margin:10px; padding-top:5px; padding-bottom: 25px;">{{question.title}}</p>
+              </div>
+              <div class="author" >
+                <img height="20px" width="20px" class="avatar-image" style="margin-left:10px;" src={{question.avatar}} alt="image here">
+                <div class="author-positioner" style="margin-left:30px;" ><p class="question-author" >{{question.author.toLowerCase()}}</p>
+            
+                <a mat-button style="margin-right:12px;" class="details-but" (click)="togglePanel_details()" [disableRipple]="true">Details</a> </div>
+              </div>
+    
+              <!-- down bar showing details of the question -->
+    
+              <div id="down_bar_details">
+                <div style="margin-left:15px;margin-top:7px">
+                  <div class="inner-downbar">
+    
+                  <svg class="svg-down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="var(--calendar)" d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                  <span class="downbar-inner-text">Posted on {{question.date|date}}</span>
+                  </div>
+                  
+                  <div class="inner-downbar">
+    
+                  <svg class="svg-down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="#e27670" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span class="downbar-inner-text">Liked by {{question.likes}} people</span>
+                  </div>
+
+                  <div class="inner-downbar">
+                  
+                    <svg class="svg-down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="var(--main-text)" d="M12.45 16h2.09L9.43 3H7.57L2.46 16h2.09l1.12-3h5.64l1.14 3zm-6.02-5L8.5 5.48 10.57 11H6.43zm15.16.59l-8.09 8.09L9.83 16l-1.41 1.41 5.09 5.09L23 13l-1.41-1.41z"/></svg>
+                    <span class="downbar-inner-text">commented by {{question.no_of_comments}} people</span>
+                  </div>
+    
+                  <div class="inner-downbar">
+    
+                  <svg class="svg-down" style="opacity:0.8" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="var(--main-text)" d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
+                    
+                    <span class="show_tags" *ngFor="let tag of question.tags">{{tag}} </span>
+                    
+                    
+                  </div>
+         
+                
+                  
+    
+                </div>
+    
+              </div>
+              <div *ngIf=" this.panelOpenState" >
+                <div class="comment-seperator" ></div>
+              </div>
+    
+    
+              <!-- ==================question description===================== -->
+    
+    
+    
+              <div class="question-full" >
+    
+                <div *ngFor="let code_q of code_question; let q_indx=index;">
+                  <div *ngIf="q_indx%2==0">
+                     <p style="padding-left:25px; padding-right:10px; padding-top:15px;">{{code_q}}</p>
+                  </div>
+                  <div *ngIf="q_indx%2!=0">
+                    <pre style="padding-left:10px; padding-right:10px; margin-bottom: -20px; "><code [highlight]="code_q"></code></pre>
+                 </div>
+                
+                
+                </div>
+    
+                <div *ngIf="question.links.length">
+                  <p style="padding-left:25px; padding-right:10px; padding-top:0px;">Links :</p>
+                  <div *ngFor="let link of question.links" style="padding-left: 15px;">
+                      <a class="link-style" href="https://{{link}}" target="_blank" rel="noopener">{{link}}</a>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="question.image">
+                  <div *ngFor="let image of question.image">
+                    <div style="margin-top:10px"></div>
+                    <img   width="100%" style="margin-top:10px;" src={{image}} alt="image here"  (dblclick)="show_full_image(image)">
+                  </div>
+              </div>
+              <div class="reaction-buttons">
+                  <a mat-button class="com-but" (click)="activate_comment()"  [disableRipple]="true"><span class="fa fa-comment fa-lg" id="comment"></span></a>
+                  <span id="like-spacer"></span>
+                  <div *ngIf="liked">
+                      <a mat-button  class="like-but" (click)="liker_but()"  [disableRipple]="true"><span class="fa fa-heart fa-lg" id="heart"></span></a> </div>
+                  <div *ngIf="liked==false" class="like-but-out" >
+                      <svg  class="svg-like" (click)="liker_but()" xmlns="http://www.w3.org/2000/svg" height="24"  viewBox="0 0 24 24"   fill="red" width="24"><path d="M0 0h24v24H0V0z"  fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
+                  </div>
+              </div>
+    
+              <div class="comments-section"  >
+                <div style="margin-top : 10px">
+                  <div *ngFor="let com of current_comment" >
+                    <img  class="comments-view-author-img-small"  src={{com.avatar}} alt="">
+                      <div class="comments-viewer" style="margin-left:58px; max-width: 250px;">
+                        <div class="comment-author">
+                        <p style="margin-left:27px; font-weight: 550;" >{{com.author.toLowerCase()}}</p>
+                        </div>
+                        <div class="comment-content">
+                          <p>{{com.comment}}</p>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <img  class="comments-view-author-img-small" style="transform: translate(25px, 33px);"  src={{current_user_avatar}} alt="">
+                  <form class="comment-form" novalidate #loginForm="ngForm" (ngSubmit)="OnSubmit(ind)">
+                      
+                      <textarea  matInput cdkTextareaAutosize class="comment-full-width" style="margin-left: 55px; width:66%"
+                      cdkAutosizeMinRows="1" placeholder="Add a comment..." [(ngModel)]="user.comment" name="my_comment" #my_comment="ngModel" required></textarea>
+                      
+                      
+                 
+                    <button type="submit" [disabled]="!loginForm.valid"  mat-button class="submit-button-com"><svg style="margin-left:-13px;" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="green" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+                  </form>
+                   
+  
+              </div>
+              <div class="comment-seperator"></div>
+
+              
+    
+    
+           
+    
+                  <!--====================== section dedicated for answers============== note while debugging=============== -->
+            
+              <div style="margin-top:26px;" *ngFor="let answers of all_answers; let ind=index;">
+                <div class="answer-author">
+                    <img height="20px" width="20px"  style="margin-left:10px;" class="avatar-image"  src={{answers.avatar}} alt="image here">
+                    <div class="author-positioner"  style="margin-left:30px;" ><p class="question-author" >{{answers.author.toLowerCase()}}</p></div>
+                </div>
+    
+                <div class="answer-status" style="padding-left: 10px;">
+                  <pre>  {{answers.upvotes}} <span class="fa fa-arrow-up fa-lg" id="arrow"></span>  {{answers.downvotes}} <span class="fa fa-arrow-down fa-lg" id="arrow"></span></pre>
+                </div>
+
+          </div>
+             <!-- loding animation -->
+           
+            <!-- setting a gap for footer  -->
+            
+    
+    </div>
+    <div *ngIf="!question" class="animate-loader">
+        <div id="loading-anim2" >
+        <app-loading-anim ></app-loading-anim></div>
+        <div style="min-height:500px"></div> 
+        <!-- // setting the footer out of screen in loading time -->
+      </div>
+      <div style="min-height:30px"></div>
+    </div>
+    <!-- ==================================================================== -->
+    <!-- window and html code for larger window size devices -->
+    <!-- ==================================================================== -->
+    <!-- ******************************************************************** -->
+    
+    <div *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')" class="large-display-offset">
+        
+        <div class="sub_container">
+      
+            <div class="spacer-for-large"></div>
+              <div class="line-sep2"></div>
+              <div class="catogory-large">
+                <p style="margin-left:25px; padding-top:7px;">{{category}} <span class="fa fa-angle-right fa-lg"></span></p>
+              </div>
+              <!-- line seperation for the catogory tab -->
+              <div class="line-sep"></div>
+      
+      
+              <!-- controll pannel for the questions  -->
+      
+      
+      
+              <div class="control-pannel">
+              
+                <a style="margin-left:12px;" mat-button class="back-but" (click)="goBack()" [disableRipple]="true">Back</a>
+              </div>
+            
+              <!-- div for making the display width smaller in large devices  -->
+              <!-- <====================================================================> -->
+          <div class="large-win-width">
+              <div *ngIf="question" class="fade-question">
+                  <div class="qs-title2">
+                    <p style="margin:10px; padding-top:12px; padding-bottom: 32px;">{{question.title}}</p>
+                  </div>
+                  <div class="author">
+                    <img height="20px" width="20px" class="avatar-image"  src={{question.avatar}} alt="image here">
+                    <div class="author-positioner"><p class="question-author" >{{question.author.toLowerCase()}}</p>
+                
+                    <a mat-button class="details-but" (click)="togglePanel_details()" [disableRipple]="true">Details</a> </div>
+                  </div>
+                  <div id="down_bar_details">
+      
+                    <div style="margin-left:5px;margin-top:7px">
+                      <div class="inner-downbar">
+        
+                      <svg class="svg-down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="var(--calendar)" d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                      <span class="downbar-inner-text">Posted on {{question.date|date}}</span>
+                      </div>
+                      
+                      <div class="inner-downbar">
+        
+                      <svg class="svg-down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="#e27670" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                      <span class="downbar-inner-text">Liked by {{question.likes}} people</span>
+                      </div>
+        
+                      <div class="inner-downbar">
+                  
+                        <svg class="svg-down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="var(--main-text)" d="M12.45 16h2.09L9.43 3H7.57L2.46 16h2.09l1.12-3h5.64l1.14 3zm-6.02-5L8.5 5.48 10.57 11H6.43zm15.16.59l-8.09 8.09L9.83 16l-1.41 1.41 5.09 5.09L23 13l-1.41-1.41z"/></svg>
+                        <span class="downbar-inner-text">commented by {{question.no_of_comments}} people</span>
+                      </div>
+        
+                      <div class="inner-downbar">
+        
+                      <svg class="svg-down" style="opacity:0.8" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="var(--main-text)" d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
+                      <span class="show_tags" *ngFor="let tag of question.tags">{{tag}} </span>
+                     
+                      </div>
+                      
+                      
+                  
+                      
+                    
+                      
+        
+                    </div>
+                    
+                  </div>
+                  <div *ngIf=" this.panelOpenState" >
+                    <div class="comment-seperator" style="width:97%"></div>
+                  </div>
+      
+                  <!-- ==================question description===================== -->
+      
+      
+      
+                  <div class="question-full" style="margin-left:5px;">
+                    
+                    <div *ngFor="let code_q of code_question; let q_indx=index;">
+                      <div *ngIf="q_indx%2==0">
+                         <p style="padding-left:10px; padding-right:10px; padding-top:15px;">{{code_q}}</p>
+                      </div>
+                      <div *ngIf="q_indx%2!=0">
+                        <pre style="padding-left:10px; padding-right:10px; margin-bottom:-20px; "><code [highlight]="code_q"></code></pre>
+                     </div>
+                    
+                    
+                    </div>
+      
+      
+                    <div *ngIf="question.links.length!=0">
+                      <p style="padding-left:10px; padding-right:10px; padding-top:0px;">Links :</p>
+                      
+                      <div *ngFor="let link of question.links">
+                          <a class="link-style" href="https://{{link}}" target="_blank" rel="noopener">{{link}}</a>
+                      </div>
+                    </div>
+                  </div>
+      
+                  
+                  <div *ngIf="question.image" class="tile-initial-position">
+                    
+                    <mat-grid-list  fxFlex cols="2" >
+                      <div style="margin-top:30px"></div>
+                      <mat-grid-tile *ngFor="let image of question.image">
+                        <img   width="100%" height="100%" class="question-query-images" src={{image}} alt="image here" (dblclick)="show_full_image(image)">
+                     </mat-grid-tile>
+              
+                    </mat-grid-list> 
+                    
+                  </div>
+      
+      
+                  
+                  <div class="reaction-buttons">
+                      <a mat-button class="com-but" (click)="activate_comment()"  [disableRipple]="true"><span class="fa fa-comment fa-lg" id="comment"></span></a>
+                      <span id="like-spacer"></span>
+                      <div *ngIf="liked">
+                          <a mat-button  class="like-but" (click)="liker_but()"  [disableRipple]="true"><span class="fa fa-heart fa-lg" id="heart"></span></a> </div>
+                      <div *ngIf="liked==false" class="like-but-out" >
+                          <svg class="svg-like" (click)="liker_but()" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
+                      </div>
+                  </div>
+
+
+                  <div class="comments-section"  >
+                    <div style="margin-top: 5px;">
+                      <div *ngFor="let com of current_comment" >
+                          <img  class="comments-view-author-img"  src={{com.avatar}} alt="">
+                              <div class="comments-viewer">
+                                <div class="comment-author">
+                                <p style="margin-left:27px;" >{{com.author.toLowerCase()}}</p>
+                                </div>
+                                <div class="comment-content">
+                                  <p>{{com.comment}}</p>
+                                </div>
+                              </div>
+                      </div>
+                    </div>
+                      <img  class="comment-author-img"  src={{current_user_avatar}} alt="">
+                      <form class="comment-form-lg"  novalidate #loginForm="ngForm" (ngSubmit)="OnSubmit(ind)">
+                        <!-- <mat-form-field [hideRequiredMarker]='true' class="comment-full-width" style="width:90%;"> -->
+                          
+                          <textarea  matInput cdkTextareaAutosize  class="comment-full-width"
+                          cdkAutosizeMinRows="1" placeholder="Add a comment..." [(ngModel)]="user.comment" name="my_comment" #my_comment="ngModel" required></textarea>
+                          
+                          
+                        <!-- </mat-form-field> -->
+                        <button type="submit"  mat-button  [disabled]="!loginForm.valid" class="submit-button-com"><svg style="margin-left:-13px;" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="green" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+                      </form>
+                       
+    
+    
+                  </div>
+                  <div class="comment-seperator" style="width:97%"></div>
+                
+      
+                  
+              </div>
+      
+              <!-- loding animation -->
+              <div *ngIf="!question" class="animate-loader">
+                <div id="loading-anim">
+                <app-loading-anim ></app-loading-anim></div>
+                <div style="min-height: 500px;"></div>
+              </div>
+              <div style="min-height: 30px;"></div>
+          </div>
+          <!-- //// div for large window width management ends\\\\ -->
+        </div>
+        </div>
+    
+    </div>
+    
+    
+    
