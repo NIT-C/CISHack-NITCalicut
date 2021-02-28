@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
 #top_bar{
     margin:0;
     margin-top:-56px;
@@ -29,22 +30,31 @@
     height: 30px;
     border-radius: 50%;
 }
+
+.logo-icon{
+    font-family: 'Reggae One', cursive;
+    // padding-right:10px;
+    font-size: 32px;
+}
+
 .logo{
     display:flex;
     margin:25px;
     padding: 0;
-    
+    transform: translate(0,-2px);
 }
 .comp-name{
   margin-top:20px;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
+  font-size:22px;
+  transform: translate(4px,15px);
 }
 .lg-logo{
     display:flex;
     margin:25px;
     padding: 0;
-    
+    transform: translate(0,-2px);
 }
 .account-text{
   cursor: pointer;
