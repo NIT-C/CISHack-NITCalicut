@@ -9,3 +9,5 @@ The prototype included in this is incomplete which consists of the necessary UX 
 Each challeger can initiate a challenge to challenge a random challenger in this platform and gain or lose points this way(thresholded by 50 points, base of 100 points on registration).
 
 Host using ``flutter run -d web-server --web-port 8887``
+
+Main repository: https://github.com/hemanthkumar17/foxtrot-alpha.git
