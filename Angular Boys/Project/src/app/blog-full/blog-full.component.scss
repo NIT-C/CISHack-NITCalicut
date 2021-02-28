@@ -1,0 +1,630 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+$fontfam: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+.catogory{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:34px;
+    font-size:16px;
+    margin-top:0px;
+    padding-top:0px;
+    // margin-bottom:-10px;
+    background-color: var(--pure-white);
+    color:var(--main-text);
+    font-family: $fontfam;
+}
+.spacer-for-large{
+    // height:30px;
+    background-color:var(--light-grey);
+}
+.catogory-large{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:34px;
+    
+    margin-top:-34px;
+    padding-top:0px;
+    font-size: 16px;
+    // margin-bottom:-10px;
+    background-color: var(--pure-white);
+    color:var(--main-text);
+    font-family: $fontfam;
+}
+.line-sep{
+    width:100%;
+    height:1px;
+    background-color: var(--background-counter);
+    opacity: 0.3;
+}
+.line-sep4{
+    width:100%;
+    height:0.3px;
+    background-color: white;
+    opacity: 0.2;
+}
+
+.control-pannel{
+    width:100%;
+    height:30px;
+    color:var(--main-text);
+}
+.back-but{
+    margin:0;
+    padding:0;
+  
+    height: 31px;
+    left:-4px;
+    top:-3px;
+    
+    font-family: $fontfam;
+}
+.sort-but{
+    margin:0;
+    padding:0;
+    float:right;
+    top:-3px;
+    left:0px;
+    height: 31px;
+    font-family: $fontfam;
+}
+.qs-title{
+    margin:0;
+    width:100%;
+   
+  
+    margin-top:-5px;
+    
+    // padding:10px;
+    height:100%;
+    white-space: pre-wrap;      /* CSS3 */   
+    white-space: -moz-pre-wrap; /* Firefox */    
+    white-space: -pre-wrap;     /* Opera <7 */   
+    white-space: -o-pre-wrap;   /* Opera 7 */    
+    word-wrap: break-word;  
+    
+    
+    background-color:#dabdec;
+    font-size: 20px;
+    // font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.author{
+    margin:0;
+    padding:0;
+    margin-top:-16px;
+    width:100%;
+    height:30px;
+    background-color: var(--light-grey);
+    color:var(--main-text);
+    font-family:$fontfam;
+    font-size:16px;
+}
+.details-but{
+    margin:0;
+    padding:0;
+    float:right;
+    top:-8px;
+    left:0px;
+    height: 31px;
+    font-family: $fontfam;
+}
+#down_bar_details{
+    margin:0;
+    // margin-top:-5px;
+    
+    padding:0;
+    transform:translateY(-10px);
+    width:100%;
+    height: 0px;
+    background-color:var(--light-grey);
+    color:var(--main-text);
+    border-color: black;
+    border-bottom: 5px;
+    border-width: 3px;
+    transition: height color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    overflow: hidden;
+    font-size:16px;
+}
+.question-full{
+    margin:0;
+    width:100%;
+   
+  
+    margin-top:0px;
+    
+    // padding:10px;
+    height:100%;
+    white-space: pre-wrap;      /* CSS3 */   
+    white-space: -moz-pre-wrap; /* Firefox */    
+    white-space: -pre-wrap;     /* Opera <7 */   
+    white-space: -o-pre-wrap;   /* Opera 7 */    
+    word-wrap: break-word;  
+    background-color: var(--question-back);
+    // background-color: var(--pure-white);
+    color:var(--main-text);
+    border-radius:4px;
+    
+    // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    // font-family: 'Roboto', sans-serif;
+    // font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lato', sans-serif;    font-kerning: auto;
+    font-size: 16px;
+    letter-spacing: 0.45px;
+    word-spacing: 0.45px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-variant-ligatures: normal;
+    font-weight: normal;
+    line-height: 1.4;
+    padding-bottom: 30px;
+    transition: color background-color;
+    transition-duration: 0.15s;
+
+}   
+.reaction-buttons{
+    // background-color: #dfdddb;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    background-color: var(--light-grey);
+    width:100%;
+    height:40px;
+}
+
+#heart{
+    font-size:25px;
+    margin-left:2px;
+    margin-top:0px;
+    color: #ee4957;
+    // color:#f1f3f5;
+    opacity:0.8;
+}
+#comment{
+    font-size:25px;
+    margin-left:0px;
+    margin-top:0px;
+    transform:rotateY(180deg);
+    opacity:0.8;
+}
+
+#comment-pen{
+    font-size:22px;
+    margin-left:0px;
+    margin-top:0px;
+   
+    opacity:0.8;
+}
+
+#like-spacer{
+    margin-left:20px;
+}
+.com-but{
+    
+    margin:0;
+    padding:0;
+    margin-left:20px;
+    width:40px!important;
+    height:30px;
+    min-width: unset!important;
+    color:var(--main-text);
+}
+.like-but{
+  
+    margin:0;
+    padding:0;
+    top:-28px;
+    margin-left:64px;
+    width:40px!important;
+    height:30px;
+   
+    min-width: unset!important;
+}
+.question-author{
+ 
+    margin:0;
+    padding:0;
+    margin-left:10px;
+    
+   
+    display: inline-block;
+    font-size:16px;
+
+}
+
+
+.avatar-image{
+    margin:0;
+    padding:0;
+
+    margin-top:7px;
+    margin-left:5px; 
+    border-radius: 100%;
+}
+.author-positioner{
+    margin-left:25px;
+    margin-top:-25px;
+}
+
+.like-but-out{
+   margin-left:70px;
+
+   margin-top:-22px;
+   transform: scale(1.1);
+   width:30px;
+}
+.link-style{
+    margin:0;
+    margin-top:5px;
+    padding-left:10px; padding-right:10px; padding-top:0px;
+    color:var(--link-color);
+    text-decoration: none;
+}
+
+.answer-author{
+    margin:0;
+    padding:0;
+    margin-top:-16px;
+    width:100%;
+    height:30px;
+    background-color: var(--light-grey);
+    color:var(--main-text);
+    font-family:$fontfam;
+}
+#arrow{
+    font-size:15px;
+    margin-top:-3px;
+}
+.answer-status{
+    margin-top:-10px;
+    height:25px;
+    font-family: $fontfam;
+    color:var(--main-text);
+}
+.upvote-arrow{
+    font-size:20px;
+}
+
+.downvote-but{
+    margin:0;
+    padding:0;
+    top:-55px;
+    margin-left:110px;
+    width:40px!important;
+    height:30px;
+   
+    min-width: unset!important;
+}
+.sep-text{
+   margin-left:-25px;
+   padding-top:5px;
+}
+#ques_ans_sep{
+    margin-top:-18px;
+    width:100%;
+    height:28px;
+    background-color:#a5e09c;
+    font-size:17px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+.comments-section{
+    width:100%;
+    height:0px;
+    max-height: 0px;
+    background-color:var(--background);
+    color:var(--main-text);
+    transition: max-height color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    overflow: hidden;
+    
+    
+}
+.comments-viewer{
+    margin-top:-23px;
+    margin-left:98px;
+    padding-top:5px; padding-bottom:3px;
+    background-color: var(--light-grey);
+    padding-right: 30px;
+    width: fit-content;
+    max-width: 715px;
+    border-radius: 12px;
+    
+}
+.comments-view-author-img{
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    transform: translate(50px,20px);
+}
+.comments-view-author-img-small{
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    transform: translate(25px, 13px);
+
+}
+
+.comment-author{
+    margin-left:-10px;
+    font-size: 16px;
+    font-family: $fontfam;
+    font-weight: 600;
+    
+}
+.comment-content{
+    margin-left:20px;
+    margin-top:-10px;
+    
+    padding:0;
+    // padding-top:5px;
+    height:100%;
+    
+    white-space: pre-wrap;      /* CSS3 */   
+    white-space: -moz-pre-wrap; /* Firefox */    
+    white-space: -pre-wrap;     /* Opera <7 */   
+    white-space: -o-pre-wrap;   /* Opera 7 */    
+    word-wrap: break-word;  
+    font-size: 17px;
+    font-family: $fontfam;
+}
+.large-display-offset{
+    margin-top:150px;
+}
+.large-win-width{
+    // margin-left:400px;
+    // margin-right:400px;
+     margin-left:20px;
+    margin-right:20px;
+}
+.question-query-images{
+    margin-top:10px;
+    margin-left:50px; 
+    border-radius:5px 5px 5px 5px   ;
+}
+.tile-initial-position{
+    margin-left:-20px;
+}
+.qs-title2{
+    margin:0;
+    width:100%;
+   
+  
+    margin-top:-5px;
+    
+    // padding:10px;
+    height:100%;
+    white-space: pre-wrap;      /* CSS3 */   
+    white-space: -moz-pre-wrap; /* Firefox */    
+    white-space: -pre-wrap;     /* Opera <7 */   
+    white-space: -o-pre-wrap;   /* Opera 7 */    
+    word-wrap: break-word;  
+    
+    
+    background-color:#dabdec;
+    font-size: 23px;
+    // font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-family: 'Open Sans', sans-serif;
+}
+.my-container{
+    background-color: var(--light-grey);
+  
+    // background-color: var(--background);
+}
+
+.sub_container{
+    padding-left : 250px;
+    padding-right : 250px;
+    padding-bottom: 50px;
+    min-height: 500px;
+}
+.sub-section-small{
+    padding-bottom : 50px;
+}
+
+.svg-like{
+    margin-left:3px;
+    fill:var(--main-text);
+    opacity:0.8;
+}
+.upvote-svg{
+    fill: var(--main-text);
+    opacity: 0.8;
+    transition:fill;
+    transition-duration: 0.05s;
+    transition-timing-function: ease-in;
+}
+
+.downvote-svg{
+    fill: var(--main-text);
+    opacity:0.8;
+    transition:fill;
+    transition-duration: 0.05s;
+    transition-timing-function: ease-in;
+}
+.comment-seperator{
+    margin-left:20px;
+    margin-right:20px;
+    margin-bottom:-1px;
+    width:88%;
+    height:2px;
+    background-color: var(--main-text);
+    opacity:0.2;
+}
+
+#write-answer-expansion{
+    margin:0;
+    // margin-top:-5px;
+    
+    padding:0;
+    transform:translateY(-10px);
+    width:100%;
+    height: 0px;
+    background-color:var(--light-grey);
+    color:var(--main-text);
+    border-color: black;
+    border-bottom: 5px;
+    border-width: 3px;
+    opacity: 0;
+    transition: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    overflow: hidden;
+    // color:#353535;
+}
+
+.inner-downbar{
+    padding-top:20px;
+}
+.downbar-inner-text{
+    margin-left:15px;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+.svg-down{
+    transform:translateY(8px);
+}
+.show_tags{
+    margin-top:5px;
+    margin-left:15px;
+    line-height: 1.3; 
+    font-family: 'Open Sans', sans-serif;
+    font-size:17px;
+}
+
+.comment-form {
+  
+    bottom:10px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+
+  }
+
+.comment-form-lg{ 
+    margin-left:60px; 
+    margin-top:0px;
+    bottom:10px;
+    min-width: 150px;
+    max-width: 90%;
+    width: 100%;
+}
+
+/// setting placehokder color .. not using angular material
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--main-text);
+    opacity: 0.7; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--main-text);
+    opacity: 0.7; /* Firefox */
+
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--main-text);
+    opacity: 0.7; /* Firefox */
+
+  }
+/////
+
+.comment-author-img{
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    transform: translate(50px,39px);
+}
+
+
+.comment-full-width {
+    margin-left:40px;
+    // margin-right:15px;
+    
+    margin-bottom: 10px;
+    width: 85%;
+    min-height: 28px;
+    border:var(--light-grey) solid 2px;
+    padding-left: 10px; padding-top:5px;
+    border-radius: 20px;
+    background-color:var(--light-grey);
+    color:var(--main-text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+.submit-button-com{
+    margin-left:5px;
+    width:20px!important;
+    height:30px;
+    min-width: unset!important;
+    transform: translate(2px,-18px);
+}
+
+::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: var(--form-field-pre) !important;
+    
+}
+
+
+
+::ng-deep .mat-form-field-underline {
+ /*change color of underline*/
+  background-color: var(--form-field-pre) !important;
+} 
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: var(--form-field) !important;
+}
+
+
+
+::ng-deep .mat-focused  .mat-form-field-underline {
+ /*change color of underline*/
+  background-color: var(--form-field) !important;
+} 
+
+::ng-deep .mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: var(--form-field-ripple) !important;;
+} 
+
+#loading-anim{
+
+    transform:translateX(90px) translateY(50px) scale(1.2);
+
+}
+#loading-anim2{
+
+    transform:translateX(125px) translateY(50px) scale(1.2);
+    
+}
+.animate-loader{
+    animation : visibility_anim;
+    animation-fill-mode: forwards;  
+    animation-duration: 1s;
+}
+.fade-question{
+    animation : visibility_anim;
+    animation-fill-mode: forwards;  
+    animation-duration: 1s;
+   
+}
+
+@keyframes visibility_anim{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}

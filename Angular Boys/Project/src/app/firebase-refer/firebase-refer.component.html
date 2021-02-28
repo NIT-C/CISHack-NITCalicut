@@ -1,0 +1,15 @@
+<h1 style="margin-top:200px;">heyyy hello</h1>
+<div *ngIf="topics">
+<ul>
+  
+    <li (dblclick)="deleteItem($event,item)" class="text" *ngFor="let item of topics">
+      {{item.topic}}
+    </li>
+  </ul>
+
+</div>
+
+<!-- <form (ngSubmit) ="onSubmit()">
+  <input type="text" placeholder="add title" [(ngModel)]="item.name" name="title">
+  <button mat-button type="submit" value="submit">submit</button>
+</form> -->

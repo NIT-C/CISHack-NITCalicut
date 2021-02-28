@@ -1,0 +1,67 @@
+<div class="my-container">
+    
+    <!-- =================== Topic card views ====================-->
+    <!-- ===============small screnn deivices=============== -->
+    <div class="card-positioner" *ngIf="this.media.isActive('xs')">
+      <div class="spacer">
+        <!-- simply for making space  -->
+      </div>
+      <div *ngIf="blogs_template">
+          <div fxLayout="column"  *ngFor="let blogs_t of blogs_template">
+              <div [routerLink]="['/blogFull',blogs_t.blog_user_end_id]">
+                <div class="image-container-sm">
+                  <img height="170px" width="100%" src={{blogs_t.thumbnail[0]}} >
+                </div>
+                <div class="card-footer">
+                  <p>{{blogs_t.title}}</p>
+                  <div class="card-author-name-sm">
+                    <p>. {{blogs_t.author.toLowerCase()}} .</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+      </div>
+      <div *ngIf="!blogs_template">
+        <div id="loading-anim2">
+          <app-loading-anim ></app-loading-anim>
+        </div>
+          <div style="min-height: 500px;"></div>
+      </div>
+     
+    </div>
+    <!-- ==============large screen pc devices====================== -->
+    <div  class="card-positioner" *ngIf="this.media.isActive('sm')||this.media.isActive('md')||this.media.isActive('lg')" >
+        <div class="spacer">
+            <!-- simply for making space  -->
+          </div>
+          <div *ngIf="blogs_template" class="lg-blog-container" >
+              <div fxLayout="column"  *ngFor="let blogs_t of blogs_template">
+                  <div [routerLink]="['/blogFull',blogs_t.blog_user_end_id]">
+                    <div class="image-container-sm">
+                      <img height="250px" width="100%" src={{blogs_t.thumbnail[0]}} >
+                    </div>
+                    <div class="card-footer">
+                      <p>{{blogs_t.title}}</p>
+                      <div class="card-author-name-sm">
+                        <p>. {{blogs_t.author.toLowerCase()}} .</p>
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+          </div>
+          <div *ngIf="!blogs_template">
+            <div id="loading-anim2">
+              <app-loading-anim ></app-loading-anim>
+            </div>
+              <div style="min-height: 500px;"></div>
+          </div>
+     
+
+     
+    </div>
+      <div class="spacer">
+        <!-- simply for making space  -->
+      </div>
+    </div>
