@@ -3,6 +3,10 @@
 Documentation for knoWare web app
 ==================================
 
+Team Member
+-----------
+Abhinav P
+
 1: project description 
 =====================
 
