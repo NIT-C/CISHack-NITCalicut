@@ -1,0 +1,22 @@
+Team Name: BlitzHacks
+Topic Chosen: HealthTech
+Team Members:Athul Joseph, Sanandh Kumar M, Nazim Jabir, Joel Mathew Cherian
+
+Project Idea: Decentralized Medical Record Exchange System along with Medical Assistance Features for patients.
+
+Description: To build a truly Patient Centered Information Exchange System while ensuring security, we decided to leverage the security provided by blockchain networks to create a Decentralized App (Dapp) where a patients has complete control over their medical records. 
+
+Our solution consists of two components
+
+1. Building a smart contract that when deployed on a blockchain allows for secure transfer of medical records while ensuring security and privacy.
+
+2. Building a Dapp for both patients and healthcare providers. The Dapp allows to place requests for records and view records. The Dapp on the patients side is equipped with personal assistant features that help patients maintain their health.
+
+
+Implementation: For the hackathon we are simulating a blockchain with ganache. We have port forwarded this so that our Dapp can access it and call the smart contract.
+
+Note: The project directory contains the prototype code for the smart contract which we will deploy on our blockchain for our Dapp to access.
+
+The Dapp is available at https://github.com/AthulJoseph27/BlitzHacks_Hackathon
+
+
