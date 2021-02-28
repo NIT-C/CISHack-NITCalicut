@@ -57,6 +57,7 @@ command to run on terminal to host
 --------------------------------
 ng serve
 
+you can also go to knoware.web.app for the deployed website
 
 how to build the project
 -----------------------
